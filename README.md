@@ -24,3 +24,11 @@ App to query data for questions and answers in Atelier E-commerce site
   |-- app.js
   |-- index.js
 ```
+
+## Git workflow
+If you are already on local branch. Use -u to establish origin.
+
+```
+git checkout <branch-name>
+git push -u origin <branch-name>
+```
