@@ -101,7 +101,7 @@ dist
 .fusebox/
 
 # DynamoDB Local files
-.dynamodb/
+# .dynamodb/
 
 # TernJS port file
 .tern-port
@@ -111,3 +111,6 @@ dist
 
 # Code coverage
 coverage
+
+# Storage for Example Files
+example_deployed_files
