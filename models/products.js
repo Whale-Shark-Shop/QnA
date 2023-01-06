@@ -10,4 +10,13 @@ const productsSchema = `
   );
 `;
 
+const copyFile = `COPY products FROM '/home/ec2-user/product.csv' DELIMITERS ',' CSV HEADER`;
+
+const updateIndex = `SELECT setval ('products_product_id_seq', (SELECT MAX(product_id) FROM products)+1);`;
+
+const createIndex = `CREATE INDEX idx_questions_product_id_hash ON questions USING HASH (product_id);`;
+
 exports.schema = productsSchema;
+exports.copyFile = copyFile;
+exports.updateIndex = updateIndex;
+exports.createIndex = createIndex;
