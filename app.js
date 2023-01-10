@@ -83,7 +83,7 @@ app.get('/qa/questions/:questionID/answers', async (req, res) => {
   let count = rq['count'];
   let offset = (count * (page - 1));
 
-  const listAnswersQuery = await pdb.query(`SELECT * FROM answers WHERE question_id = ${qID} AND reported = false ORDER BY answer_id LIMIT ${count} OFFSET ${offset}`);
+  const listAnswersQuery = await pdb.query(`SELECT * FROM answers WHERE question_id = git s${qID} AND reported = false ORDER BY answer_id LIMIT ${count} OFFSET ${offset}`);
 
   const response = await Promise.all(listAnswersQuery.rows.map(async (el) => {
     const photos = await pdb.query(`select id, url FROM answer_photos where answer_id = ${el['answer_id']}`);

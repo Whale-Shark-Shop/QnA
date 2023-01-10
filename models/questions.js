@@ -1,3 +1,5 @@
+const filePath = '/Users/calvin/Documents/SDC/SDC Application Data - Atelier Project (_Clean_ Data Set)/questions.csv';
+
 /* eslint-disable no-unused-vars */
 const questionsSchema = `
   CREATE TABLE IF NOT EXISTS questions (
@@ -13,6 +15,10 @@ const questionsSchema = `
       FOREIGN KEY(product_id)
         REFERENCES products(product_id)
 );`;
+
+//
+
+const copyFile = '/home/ec2-user/product.csv'
 
 exports.schema = questionsSchema;
 

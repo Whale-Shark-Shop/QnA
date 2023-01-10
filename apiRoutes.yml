@@ -1,0 +1,44 @@
+config:
+  target: "http://localhost:3000"
+  variables:
+    id:
+    - '1000000'
+  phases:
+    # - duration: 60
+    #   arrivalRate: 1
+    #   name: Warm up
+    # - duration: 60
+    #   arrivalRate: 10
+    #   name: Ramp up to load
+    # - duration: 60
+    #   arrivalRate: 200
+    #   name: Sustained Load
+    # - duration: 60
+    #   arrivalRate: 400
+    #   name: letzgocrazy
+    - duration: 60
+      arrivalRate: 1000
+      name: evenfaster
+
+  environments:
+    local-dev:
+    target: "http://localhost:3000"
+    phases:
+    - duration: 30
+      arrivalRate: 1
+      name: Warm up
+    - duration: 30
+      arrivalRate: 10
+      name: Ramp up to load
+    - duration: 30
+      arrivalRate: 100
+      name: Sustained Load
+    - duration: 30
+      arrivalRate: 1000
+      name: Lezgocrazy
+
+scenarios:
+  - name: "List Questions"
+    flow:
+      - get:
+            url: '/qa/questions/?product_id={{id}}}&page=1&count=50'
